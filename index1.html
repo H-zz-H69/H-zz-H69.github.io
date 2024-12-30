@@ -5,65 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H-zz-H Cheats</title>
     <style>
-        /* Stil für den gesamten Hintergrund */
         body {
-            background-color: black; /* Anfangs schwarzer Hintergrund */
+            background-color: black; 
             margin: 0;
             height: 100vh;
             display: flex;
-            flex-direction: column; /* Stack Container, Text und Footer untereinander */
+            flex-direction: column;
             justify-content: flex-start;
-            align-items: center; /* Alle Elemente werden mittig ausgerichtet */
+            align-items: center;
             overflow: hidden;
-            animation: fadeInBackground 0.5s ease-out forwards; /* Hintergrund blendet nach 300ms ein */
-            opacity: 0; /* Startet unsichtbar */
-            animation-delay: 0.24s; /* Verzögerung nach 100ms */
+            animation: fadeInBackground 0.5s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.24s; 
         }
 
-        /* Container für das Bild */
         .container {
             position: relative;
-            opacity: 0; /* Container beginnt unsichtbar */
-            animation: fadeInElements 0.5s ease-out forwards; /* Container blendet nach 300ms ein */
-            animation-delay: 0.24s; /* Startet nach 300ms */
+            opacity: 0; 
+            animation: fadeInElements 0.5s ease-out forwards;
+            animation-delay: 0.24s; 
         }
 
-        /* Neue Animation für die Rotation und Bewegung nach oben */
         @keyframes rotateAndMoveUp {
             0% {
                 transform: rotate(0deg);
-                top: 150px; /* Startposition */
+                top: 150px; 
             }
             30% {
                 transform: rotate(45deg);
-                top: 120px; /* Bild bewegt sich etwas nach oben */
+                top: 120px; 
             }
             60% {
                 transform: rotate(-45deg);
-                top: 90px; /* Bild bewegt sich weiter nach oben */
+                top: 90px;
             }
             90% {
                 transform: rotate(0deg);
-                top: 60px; /* Bild bewegt sich weiter nach oben */
+                top: 60px; 
             }
             100% {
-                transform: rotate(0deg); /* Zurück auf 0° */
-                top: 30px; /* Endposition */
+                transform: rotate(0deg); 
+                top: 30px;
             }
         }
 
         .image {
-            position: relative; /* Bild relativ zur normalen Position */
-            top: 150px; /* Anfangs-Position des Bildes */
+            position: relative; 
+            top: 150px; 
             width: 100px;
             height: auto;
-            animation: rotateAndMoveUp 4s ease-in-out forwards; /* Kombinierte Animation */
+            animation: rotateAndMoveUp 4s ease-in-out forwards; 
             filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.2))
                     drop-shadow(0 0 15px rgba(255, 20, 147, 0.15))
                     drop-shadow(0 0 20px rgba(255, 20, 147, 0.1));
         }
 
-        /* Farbübergang von Schwarz zu einer anderen Farbe (z.B. Dunkelblau) */
         @keyframes fadeInBackground {
             0% {
                 background-color: black;
@@ -75,7 +71,6 @@
             }
         }
 
-        /* Animation für das Einblenden der Elemente */
         @keyframes fadeInElements {
             0% {
                 opacity: 0;
@@ -85,7 +80,6 @@
             }
         }
 
-        /* Text-Animation für das Einblenden */
         @keyframes fadeInText {
             0% {
                 opacity: 0;
@@ -97,18 +91,16 @@
             }
         }
 
-        /* Stil für den Text */
         .text {
             font-size: 24px;
             color: white;
-            margin-top: 50px; /* Text 50px weiter nach unten verschieben */
+            margin-top: 50px;
             opacity: 0;
             animation: fadeInText 1s ease-out forwards;
-            animation-delay: 4s; /* Verzögerung nach der Bild-Animation */
+            animation-delay: 4s; 
             text-shadow: 0 0 5px rgba(255, 20, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.4), 0 0 15px rgba(255, 20, 147, 0.3);
         }
 
-        /* Footer-Stil mit sanfter Animation */
         footer {
             position: absolute;
             bottom: 20px;
@@ -117,16 +109,15 @@
             text-align: center;
             opacity: 0;
             animation: fadeInText 1s ease-out forwards;
-            animation-delay: 6s; /* Verzögerung nach der Text-Animation */
+            animation-delay: 6s;
             text-shadow: 0 0 5px rgba(255, 20, 147, 0.5), 0 0 10px rgba(255, 20, 147, 0.4), 0 0 15px rgba(255, 20, 147, 0.3);
         }
 
         footer a {
-            color: #FF1493; /* Stil für Links */
+            color: #FF1493; 
             text-decoration: none;
         }
 
-        /* Unsichtbarer Button */
         .audio-button {
             position: absolute;
             top: 0;
@@ -144,29 +135,24 @@
     <div class="container">
         <img src="hzzh.png" alt="hzzh" class="image">
 
-        <!-- Invisible Play/Stop Button -->
         <button class="audio-button" onclick="toggleMusic()"></button>
     </div>
 
-    <!-- Text, der nach der Bildanimation erscheint -->
     <div class="text">
         Welcome to H-zz-H Cheats!
     </div>
 
-    <!-- Footer -->
     <footer>
         <h9>Top #1 Cheating Service</h9>
         <p>&copy; 2024 H-zz-H Panel | <a href="users_expiration.json">Users Expirations</a> | <a href="loader_version.json">Current Version</a></p>
     </footer>
 
-    <!-- Music -->
     <audio id="music" loop>
         <source src="music.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        // Function to toggle play/pause of music
         let music = document.getElementById('music');
         let isPlaying = false;
 
